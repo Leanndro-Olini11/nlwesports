@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*variaveis css*/
+:root {
+/*estilo da fonte usada*/    
+    --ff-inter: 'Inter', sans-serif;
+}
+
+body {
+    background-image: url(./image/Fundo.jpg);
+    
+    /*centralizar a imagem na parte de cima e no centro da tela*/
+    background-position: top center;
+    
+    /*nos deixa com o tamanho da imagem 100% do tamanho da tela e de forma automatica*/
+    background-size: 100% auto;
+    
+    /*tira a repetição da imagem de fundo pois o normal é repetir*/
+    background-repeat: no-repeat;
+    background-color: #121214;
+    padding-bottom: 57px;
+}
+
+body header img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    padding: 3.7px;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);    
+    margin:  32px 230px;
+    /*atribuindo a transição no valor de transform que foi passado logo abaixo
+    e a velocidade de transição logo em seguida*/
+    transition: transform 0.3s ;
+}
+
+/*dando uma transformação a imagem do header */
+header img:hover {
+   transform: scale(1.1);
+}
+
+section h2 {
+    font-family: var(--ff-inter);
+    
+    /*estilo da fonte*/
+    font-style: normal;
+    
+    /*espessura da fonte*/
+    font-weight: 900;
+    
+    /*tamando da fonte*/
+    font-size: 24px;
+   
+    /*altura da linha*/
+    line-height: 160%;
+    
+    /*espaçamento entre letras*/ 
+    letter-spacing: -0.47px;
+    color: #ffffff;
+}
+
+section p {
+    font-family: var(--ff-inter);
+    
+    /*estilo da fonte*/
+    font-style: normal;
+    
+    /*espessura da fonte*/
+    font-weight: 400;
+    
+    /*tamando da fonte*/
+    font-size: 16px;
+    
+    /*altura da linha*/
+    line-height: 160%;
+
+    /*espaçamento entre letras*/    
+    letter-spacing: -0.18px;
+    color: #A1A1AA;
+}
+
+/*colando o tammnho, borda e margin na imagem da div games-cards*/
+.games-cards img {
+    width: 90px;
+    border-radius: 8px;
+}
+
+/*colando o tammnho, borda e margin na imagem da div social-cards*/
+.social-cards img {
+    width: 70px;
+    border-radius: 999px;
+    border: 1px solid #443E54;
+}
+
+/*colocando tamanho, altura nas imagens da ul games-cards e a deixando com os espaços entre eles certos*/
+main {
+/*é preciso para colocar o gap entre as ''caixas''*/
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    /*altura e largura da caixa main que é o corpo da aplicação*/
+    width: 580px;
+    height: 841px;
+    margin: 0 auto 57px;
+}
+
+section {
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    padding-top: 4px;
+    border-radius: 10px;
+}
+
+section .games-cards {
+    height: 251px;
+}
+
+/*defenindo cor de fundo para o cards e sua altura*/
+section > div {
+    background-color: #2A2634;
+    
+    padding: 24px 32px 32px ;
+    border-radius: 8px;
+}
+
+section ul {
+    display: flex;
+    flex-direction: line;
+    gap: 16px;
+    margin-top: 24px;
+    /*tirando a listagem da lista nao ordenada*/    
+    list-style: none;
+} 
+
+/*atribuindo a transição no valor de transform que foi passado logo abaixo
+    e a velocidade de transição logo em seguida*/
+section ul li {
+    transition: transform 0.5s;
+}
+/*dando uma transformação aos elementos da lista */
+section ul li:hover {
+    transform: scale(1.1);
+}
+
+/*atribuindo a animação que vai estar na imagem e o tempo de execução*/
+header div {
+    animation: fromtop 0.7s 0.2s backwards;
+}
+
+/*adcionando estilo ao carregar a imagem */
+@keyframes fromtop {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    top {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+main section {
+    animation: frombottom 0.7s backwards;
+}
+/*main pegue o section filho numero 1*/
+main section:nth-child(1) {
+    animation-delay: 0s;
+}
+/*main pegue o section filho numero 2*/
+main section:nth-child(2) {
+    animation-delay: 0.7s;
+}
+/*main pegue o section filho numero 3*/
+main section:nth-child(3) {
+    animation-delay: 0.4s;
+}
+/*animação para a partes dos cards da tela*/
+@keyframes frombottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px)
+    }
+    bottom {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
